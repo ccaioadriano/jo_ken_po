@@ -15,9 +15,13 @@ function App() {
   const [selectedPlayerOption,setSelectedPlayerOption] = useState("")
   const [machineOption, setMachineOption] = useState("")
 
-  function getValue(e) {
+  function setValues(e) {
     setSelectedPlayerOption(e.target.value)
-    setMachineOption()
+
+ 
+      setTimeout(()=>{
+        setMachineOption(options[Math.floor(Math.random() * options.length)])
+      }, 1000)
   }
 
   return (
@@ -28,7 +32,7 @@ function App() {
       <div>Opção do maquina: {machineOption}</div>
 
       {options.map((option, index) => {
-        return <button key={index} onClick={(e)=>{getValue(e)}} value={option}>{option}</button>;
+        return <button key={index} onClick={(e)=>{setValues(e)}} value={option}>{option}</button>;
       })}
     </>
   );
