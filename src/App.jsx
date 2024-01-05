@@ -9,11 +9,18 @@ function Header({ score }) {
 }
 
 function App() {
-  const [score, setScore] = useState(0);
   const options = ["Pedra", "Papel", "Tesoura"];
 
+  const [score, setScore] = useState(0);
   const [selectedPlayerOption,setSelectedPlayerOption] = useState("")
   const [machineOption, setMachineOption] = useState("")
+
+  if(selectedPlayerOption && machineOption) {
+    setTimeout(()=>{
+      setSelectedPlayerOption("")
+      setMachineOption("")
+    }, 2000)
+  }
 
   function setValues(e) {
     setSelectedPlayerOption(e.target.value)
@@ -27,6 +34,7 @@ function App() {
   return (
     <>
       <Header score={score} />
+
 
       <div>Opção do player: {selectedPlayerOption}</div>
       <div>Opção do maquina: {machineOption}</div>
