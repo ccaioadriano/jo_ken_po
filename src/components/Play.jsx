@@ -1,8 +1,8 @@
-function Play({ choice }) {
+function Play({ handle }) {
   const options = ["Pedra", "Papel", "Tesoura"];
 
-  function getChoice(e) {
-    choice(e);
+  function handleClick(e) {
+    handle(e);
   }
 
   return (
@@ -13,7 +13,7 @@ function Play({ choice }) {
             key={index}
             value={option}
             onClick={(e) => {
-              getChoice(e);
+              handleClick(e);
             }}
           >
             {option}
