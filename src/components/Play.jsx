@@ -1,15 +1,7 @@
-function Play({ handle }) {
-  const options = ["Pedra", "Papel", "Tesoura"];
-
+function Play({ onButtonClick, value }) {
   return (
     <>
-      {options.map((option, index) => {
-        return (
-          <button key={index} value={option} onClick={handle}>
-            {option}
-          </button>
-        );
-      })}
+      <button onClick={onButtonClick}>{value}</button>
     </>
   );
 }
