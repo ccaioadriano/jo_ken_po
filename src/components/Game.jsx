@@ -1,6 +1,8 @@
 import { useEffect, useState } from "react";
 import Play from "./Play";
-import Header from "./Header";
+import papel from "../assets/papel.png";
+import pedra from "../assets/pedra.png";
+import tesoura from "../assets/tesoura.png";
 
 function Game() {
   const optionsMachine = ["Pedra", "Papel", "Tesoura"];
@@ -58,18 +60,21 @@ function Game() {
             handleChoices("Pedra");
           }}
           value={"Pedra"}
+          img={pedra}
         />
         <Play
           onButtonClick={() => {
             handleChoices("Papel");
           }}
           value={"papel"}
+          img={papel}
         />
         <Play
           onButtonClick={() => {
             handleChoices("Tesoura");
           }}
           value={"Tesoura"}
+          img={tesoura}
         />
       </div>
     </>
