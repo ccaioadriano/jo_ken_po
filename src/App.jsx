@@ -1,10 +1,10 @@
 import "./App.css";
-import { useState } from "react";
-import Header from "./components/Header.jsx";
 import Game from "./components/Game.jsx";
 function App() {
   return (
     <>
+      <h1>Jokenpo</h1>
+
       <Game />
 
       <button>Regras</button>
