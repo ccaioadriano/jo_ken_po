@@ -3,13 +3,14 @@ import Play from "./Play";
 import papel from "../assets/papel.png";
 import pedra from "../assets/pedra.png";
 import tesoura from "../assets/tesoura.png";
-
+import "../index.css";
+import Header from "./Header";
 function Game() {
   const optionsMachine = ["Pedra", "Papel", "Tesoura"];
   const [playerChoice, setPlayerChoice] = useState(null);
   const [machineChoice, setMachineChoice] = useState(null);
-  const [score, setScore] = useState(0);
-  const [winner, setWinner] = useState(null);
+  const [playerScore, setPlayerScore] = useState(0);
+  const [machineScore, setMachineScore] = useState(0);
 
   function handleChoices(playerOption) {
     setPlayerChoice(playerOption);
@@ -21,63 +22,59 @@ function Game() {
 
   function determineWinnerAndUpdateScore() {
     if (playerChoice === "Pedra" && machineChoice === "Tesoura") {
-      setWinner("Player Win");
-      setScore(score + 1);
+      setPlayerScore(playerScore + 1);
     } else if (playerChoice === "Pedra" && machineChoice === "Papel") {
-      setWinner("Machine Win");
+      setMachineScore(machineScore + 1);
     } else if (playerChoice === "Papel" && machineChoice === "Pedra") {
-      setWinner("Player Win");
-      setScore(score + 1);
+      setPlayerScore(playerScore + 1);
     } else if (playerChoice === "Papel" && machineChoice === "Tesoura") {
-      setWinner("Machine Win");
+      setMachineScore(machineScore + 1);
     } else if (playerChoice === "Tesoura" && machineChoice === "Papel") {
-      setWinner("Player Win");
-      setScore(score + 1);
+      setPlayerScore(playerScore + 1);
     } else if (playerChoice === "Tesoura" && machineChoice === "Pedra") {
-      setWinner("Machine Win");
+      setMachineScore(machineScore + 1);
     } else {
-      setWinner("Empate");
+      ("EMPATE");
     }
   }
 
-  //Espera 2 segundos e faz a jogada a IA
   useEffect(() => {
     determineWinnerAndUpdateScore();
   }, [playerChoice, machineChoice]);
 
   return (
-    <>
-      {}
-
-      <div className="selected">
-        {playerChoice && <div>Opção do player: {playerChoice}</div>}
-        {machineChoice && <div>Opção do maquina: {machineChoice}</div>}
-      </div>
-
-      <div className="options">
-        <Play
-          onButtonClick={(e) => {
-            handleChoices("Pedra");
-          }}
-          value={"Pedra"}
-          img={pedra}
-        />
-        <Play
-          onButtonClick={() => {
-            handleChoices("Papel");
-          }}
-          value={"papel"}
-          img={papel}
-        />
-        <Play
-          onButtonClick={() => {
-            handleChoices("Tesoura");
-          }}
-          value={"Tesoura"}
-          img={tesoura}
-        />
-      </div>
-    </>
+    <div className="game">
+      <Header playerScore={playerScore} machineScore={machineScore} />
+      <main>
+        <div className="selected">
+          <div>Opção do jogador: {playerChoice}</div>
+          <div>Opção da máquina: {machineChoice}</div>
+        </div>
+        <div className="options">
+          <Play
+            onButtonClick={(e) => {
+              handleChoices("Pedra");
+            }}
+            value="Pedra"
+            img={pedra}
+          />
+          <Play
+            onButtonClick={() => {
+              handleChoices("Papel");
+            }}
+            value="Papel"
+            img={papel}
+          />
+          <Play
+            onButtonClick={() => {
+              handleChoices("Tesoura");
+            }}
+            value="Tesoura"
+            img={tesoura}
+          />
+        </div>
+      </main>
+    </div>
   );
 }
 

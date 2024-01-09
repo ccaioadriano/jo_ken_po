@@ -1,14 +1,12 @@
-function Header({ score, winner }) {
+function Header({ playerScore, machineScore }) {
   return (
     <>
-      <div>
-
-
-        <div>
-          <p>Placar: {score}</p>
-          <p>Vencedor: {winner}</p>
+      <header>
+        <div className="score">
+          <p>Jogador: {playerScore}</p>
+          <p>Máquina: {machineScore}</p>
         </div>
-      </div>
+      </header>
     </>
   );
 }
