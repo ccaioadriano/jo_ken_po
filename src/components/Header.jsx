@@ -1,7 +1,14 @@
-function Header({ score }) {
+function Header({ score, winner }) {
   return (
     <>
-      <h1>Score: {score}</h1>
+      <div>
+
+
+        <div>
+          <p>Placar: {score}</p>
+          <p>Vencedor: {winner}</p>
+        </div>
+      </div>
     </>
   );
 }
