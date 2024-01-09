@@ -9,56 +9,65 @@ function Game() {
   const [score, setScore] = useState(0);
   const [winner, setWinner] = useState(null);
 
-  function handleSetPlayerChoice(value) {
-    setPlayerChoice(value);
+  function handleChoices(playerOption) {
+    setPlayerChoice(playerOption);
+
+    setMachineChoice(
+      optionsMachine[Math.floor(Math.random() * optionsMachine.length)]
+    );
   }
-
-  useEffect(() => {
-    let timeOutId = setTimeout(() => {
-      setMachineChoice(
-        optionsMachine[Math.floor(Math.random() * optionsMachine.length)]
-      );
-      determineWinnerAndUpdateScore();
-    }, 2000);
-
-    return () => clearTimeout(timeOutId);
-  }, [playerChoice]);
 
   function determineWinnerAndUpdateScore() {
-    if (playerChoice && (playerChoice == "Pedra" && machineChoice == "Tesoura")) {
-      setWinner("Player Ganhou");
+    if (playerChoice === "Pedra" && machineChoice === "Tesoura") {
+      setWinner("Player Win");
+      setScore(score + 1);
+    } else if (playerChoice === "Pedra" && machineChoice === "Papel") {
+      setWinner("Machine Win");
+    } else if (playerChoice === "Papel" && machineChoice === "Pedra") {
+      setWinner("Player Win");
+      setScore(score + 1);
+    } else if (playerChoice === "Papel" && machineChoice === "Tesoura") {
+      setWinner("Machine Win");
+    } else if (playerChoice === "Tesoura" && machineChoice === "Papel") {
+      setWinner("Player Win");
+      setScore(score + 1);
+    } else if (playerChoice === "Tesoura" && machineChoice === "Pedra") {
+      setWinner("Machine Win");
+    } else {
+      setWinner("Empate");
     }
-    setWinner("Machine Winner")
   }
+
+  //Espera 2 segundos e faz a jogada a IA
+  useEffect(() => {
+    determineWinnerAndUpdateScore();
+  }, [playerChoice, machineChoice]);
 
   return (
     <>
+      {}
 
-    {winner && "Player Ganhou"}
-
-      <Header score={score} />
-
-      <div>
-        <div>Opção do player: {playerChoice}</div>
-        <div>Opção do maquina: {machineChoice}</div>
+      <div className="selected">
+        {playerChoice && <div>Opção do player: {playerChoice}</div>}
+        {machineChoice && <div>Opção do maquina: {machineChoice}</div>}
       </div>
 
-      <div>
+      <div className="options">
         <Play
           onButtonClick={(e) => {
-            handleSetPlayerChoice("Pedra");
+            handleChoices("Pedra");
           }}
           value={"Pedra"}
         />
         <Play
           onButtonClick={() => {
-            handleSetPlayerChoice("Papel");
+            handleChoices("Papel");
           }}
           value={"papel"}
         />
         <Play
           onButtonClick={() => {
-            handleSetPlayerChoice("Tesoura");
+            handleChoices("Tesoura");
           }}
           value={"Tesoura"}
         />
