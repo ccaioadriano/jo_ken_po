@@ -1,12 +1,9 @@
-
-import Game from "./components/Game.jsx";
+import { Link } from "react-router-dom";
 function App() {
   return (
     <>
       <h1>Jokenpo</h1>
-
-      <Game />
-
+      <Link to={"/game"}>Jogar</Link>
       <button>Regras</button>
     </>
   );

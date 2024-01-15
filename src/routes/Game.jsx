@@ -1,10 +1,10 @@
 import { useEffect, useState } from "react";
-import Play from "./Play";
+import Play from "../components/Play";
 import papel from "../assets/papel.png";
 import pedra from "../assets/pedra.png";
 import tesoura from "../assets/tesoura.png";
 import "../index.css";
-import Header from "./Header";
+import Header from "../components/Header";
 function Game() {
   const optionsMachine = ["Pedra", "Papel", "Tesoura"];
   const [playerChoice, setPlayerChoice] = useState(null);
