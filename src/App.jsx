@@ -4,7 +4,7 @@ function App() {
     <>
       <h1>Jokenpo</h1>
       <Link to={"/game"}>Jogar</Link>
-      <button>Regras</button>
+      <Link to={"/rules"}>Regras</Link>
     </>
   );
 }
