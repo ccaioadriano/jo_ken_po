@@ -1,4 +1,4 @@
-function Play({ onButtonClick, value, img }) {
+function Options({ onButtonClick, value, img }) {
   return (
     <>
       <button onClick={onButtonClick}>
@@ -7,4 +7,4 @@ function Play({ onButtonClick, value, img }) {
     </>
   );
 }
-export default Play;
+export default Options;

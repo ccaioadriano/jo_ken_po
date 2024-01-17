@@ -1,10 +1,11 @@
 import { useEffect, useState } from "react";
-import Play from "../components/Play";
-import papel from "../assets/papel.png";
-import pedra from "../assets/pedra.png";
-import tesoura from "../assets/tesoura.png";
-import "../index.css";
-import Header from "../components/Header";
+import Options from "../../components/Options";
+import papel from "../../assets/papel.png";
+import pedra from "../../assets/pedra.png";
+import tesoura from "../../assets/tesoura.png";
+import Header from "../../components/Header";
+import Box from "../../components/Box";
+import "./style.css";
 function Game() {
   const optionsMachine = ["Pedra", "Papel", "Tesoura"];
   const [playerChoice, setPlayerChoice] = useState(null);
@@ -43,38 +44,43 @@ function Game() {
   }, [playerChoice, machineChoice]);
 
   return (
-    <div className="game">
-      <Header playerScore={playerScore} machineScore={machineScore} />
-      <main>
-        <div className="selected">
-          <div>Opção do jogador: {playerChoice}</div>
-          <div>Opção da máquina: {machineChoice}</div>
-        </div>
-        <div className="options">
-          <Play
-            onButtonClick={(e) => {
-              handleChoices("Pedra");
-            }}
-            value="Pedra"
-            img={pedra}
-          />
-          <Play
-            onButtonClick={() => {
-              handleChoices("Papel");
-            }}
-            value="Papel"
-            img={papel}
-          />
-          <Play
-            onButtonClick={() => {
-              handleChoices("Tesoura");
-            }}
-            value="Tesoura"
-            img={tesoura}
-          />
-        </div>
-      </main>
-    </div>
+    <>
+    <h1>Hora da caixa</h1>
+    <Box>
+      <div className="game">
+        <Header machineScore={machineScore} playerScore={playerScore} />
+        <main>
+          <div className="selected">
+            <div>Opção do jogador: {playerChoice}</div>
+            <div>Opção da máquina: {machineChoice}</div>
+          </div>
+          <div className="options">
+            <Options
+              onButtonClick={(e) => {
+                handleChoices("Pedra");
+              }}
+              value="Pedra"
+              img={pedra}
+            />
+            <Options
+              onButtonClick={() => {
+                handleChoices("Papel");
+              }}
+              value="Papel"
+              img={papel}
+            />
+            <Options
+              onButtonClick={() => {
+                handleChoices("Tesoura");
+              }}
+              value="Tesoura"
+              img={tesoura}
+            />
+          </div>
+        </main>
+      </div>
+    </Box>
+    </>
   );
 }
 
