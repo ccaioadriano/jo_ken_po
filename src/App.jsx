@@ -1,10 +1,10 @@
-import { Link } from "react-router-dom";
+import Header from "./components/Header";
+import RoutesApp from "./routes";
+
 function App() {
   return (
     <>
-      <h1>Jokenpo</h1>
-      <Link to={"/game"}>Jogar</Link>
-      <Link to={"/rules"}>Regras</Link>
+      <RoutesApp />
     </>
   );
 }
