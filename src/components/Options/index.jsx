@@ -2,7 +2,7 @@ function Options({ onButtonClick, value, img }) {
   return (
     <>
       <button onClick={onButtonClick}>
-        <img src={img} alt={value} height="200" width="200" />
+        <img src={img} alt={value} height="100" width="100" />
       </button>
     </>
   );

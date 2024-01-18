@@ -5,6 +5,7 @@ import pedra from "../../assets/pedra.png";
 import tesoura from "../../assets/tesoura.png";
 import Header from "../../components/Header";
 import Box from "../../components/Box";
+import Display from "../../components/Display"
 import "./style.css";
 function Game() {
   const optionsMachine = ["Pedra", "Papel", "Tesoura"];
@@ -45,15 +46,13 @@ function Game() {
 
   return (
     <>
-    <h1>Hora da caixa</h1>
-    <Box>
-      <div className="game">
-        <Header machineScore={machineScore} playerScore={playerScore} />
-        <main>
-          <div className="selected">
-            <div>Opção do jogador: {playerChoice}</div>
-            <div>Opção da máquina: {machineChoice}</div>
-          </div>
+      <h1>Hora da caixa</h1>
+
+      <div className="center">
+        <Box>
+          <Header machineScore={machineScore} playerScore={playerScore} />
+
+          <Display playerChoice={playerChoice} machineChoice={machineChoice} />
           <div className="options">
             <Options
               onButtonClick={(e) => {
@@ -61,6 +60,7 @@ function Game() {
               }}
               value="Pedra"
               img={pedra}
+              className="pedra"
             />
             <Options
               onButtonClick={() => {
@@ -77,9 +77,8 @@ function Game() {
               img={tesoura}
             />
           </div>
-        </main>
+        </Box>
       </div>
-    </Box>
     </>
   );
 }

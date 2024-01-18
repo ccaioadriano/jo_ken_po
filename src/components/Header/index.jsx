@@ -1,11 +1,10 @@
+import "./style.css";
 function Header({ playerScore, machineScore }) {
   return (
     <>
-      <header>
-        <div className="score">
-          <p>Jogador: {playerScore}</p>
-          <p>Máquina: {machineScore}</p>
-        </div>
+      <header className="is-flex">
+        <p>Jogador: {playerScore}</p>
+        <p>Máquina: {machineScore}</p>
       </header>
     </>
   );

@@ -6,8 +6,12 @@ const Home = () => {
       <div className="content">
         <h1 className="title is-size-1">Jokenpo</h1>
         <div className="is-flex">
-          <Link to={"/game"} className="button is-primary">Jogar</Link>
-          <Link to={"/regras"} className="button is-warning">Regras</Link>
+          <Link to={"/game"} className="button is-primary">
+            Jogar
+          </Link>
+          <Link to={"/regras"} className="button is-warning">
+            Regras
+          </Link>
         </div>
       </div>
     </>
