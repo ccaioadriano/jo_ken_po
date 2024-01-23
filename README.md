@@ -15,25 +15,25 @@ This is a simple project was developed with React, was used React-Router for nav
 - Bulma
 ## How to Running
 
-Clone o projeto
+Clone the project
 
 ```bash
   git clone https://github.com/ccaioadriano/jo_ken_po.git
 ```
 
-Entre no diretório do projeto
+Enter the project directory
 
 ```bash
   cd jo_ken_po
 ```
 
-Instale as dependências
+Install the dependences
 
 ```bash
   npm install
 ```
 
-Inicie o servidor
+Init the server
 
 ```bash
   npm run dev
@@ -41,9 +41,9 @@ Inicie o servidor
 
 ## Pending
 
-- Display choices on the screen;
-- Don't allow that the user choose same option as the previous move;
-- To Do unit tests;
+- [ ] Display choices on the screen;
+- [ ] Don't allow that the user choose same option as the previous move;
+- [ ] To Do unit tests;
 ## Done
 - [x]  Home Page
 - [x]  Logic Game
