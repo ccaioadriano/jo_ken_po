@@ -46,8 +46,6 @@ function Game() {
 
   return (
     <>
-      <h1>Hora da caixa</h1>
-
       <div className="center">
         <Box>
           <Header machineScore={machineScore} playerScore={playerScore} />
