@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react";
 import Options from "../../components/Options";
-import papel from "../../assets/papel.png";
-import pedra from "../../assets/pedra.png";
-import tesoura from "../../assets/tesoura.png";
+import Papel from "../../assets/Papel.png";
+import Pedra from "../../assets/Pedra.png";
+import Tesoura from "../../assets/Tesoura.png";
 import Header from "../../components/Header";
 import Box from "../../components/Box";
 import Display from "../../components/Display"
@@ -59,7 +59,7 @@ function Game() {
                 handleChoices("Pedra");
               }}
               value="Pedra"
-              img={pedra}
+              img={Pedra}
               className="pedra"
             />
             <Options
@@ -67,14 +67,14 @@ function Game() {
                 handleChoices("Papel");
               }}
               value="Papel"
-              img={papel}
+              img={Papel}
             />
             <Options
               onButtonClick={() => {
                 handleChoices("Tesoura");
               }}
               value="Tesoura"
-              img={tesoura}
+              img={Tesoura}
             />
           </div>
         </Box>
