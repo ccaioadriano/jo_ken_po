@@ -1,18 +1,38 @@
-import papel from "../../assets/papel.png";
-import pedra from "../../assets/pedra.png";
-import tesoura from "../../assets/tesoura.png";
+import Papel from "../../assets/Papel.png";
+import Pedra from "../../assets/Pedra.png";
+import Tesoura from "../../assets/Tesoura.png";
 import Box from "../Box";
-import "./style.css"
+import "./style.css";
 
 function Display({ playerChoice, machineChoice }) {
+
+
+  function choiceTest(choice) {
+    switch (choice) {
+      case "Pedra":
+        return <img src={Pedra} alt="Pedra" width={"75px"} />
+
+      case "Papel":
+        return <img src={Papel} alt="Pedra" width={"75px"} />
+      
+      case "Tesoura":
+        return <img src={Tesoura} alt="Pedra" width={"75px"} />
+      default:
+        return <></>
+    }
+  }
+
+
   return (
     <div className="display">
       <div className="display-single">
-        <img src={pedra} alt="Pedra" width={"75px"} />
+        {
+        choiceTest(playerChoice)
+        }
       </div>
       <span>X</span>
       <div className="display-single">
-        <img src={pedra} alt="Pedra" width={"75px"} />
+        {choiceTest(machineChoice)}
       </div>
     </div>
   );
