@@ -40,8 +40,6 @@ Inicie o servidor
 ```
 
 ## Pending
-
-- Display choices on the screen;
 - Don't allow that the user choose same option as the previous move;
 - To Do unit tests;
 ## Done
@@ -49,6 +47,7 @@ Inicie o servidor
 - [x]  Logic Game
 - [x]  Styles with Bulma
 - [x]  Navigation with Routes
+- [x]  Display choices on the screen
 ## To Fix
 
 - On the Mobile, the options isn't responsive;
