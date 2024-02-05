@@ -41,7 +41,6 @@ Init the server
 
 ## Pending
 
-- [ ] Display choices on the screen;
 - [ ] Don't allow that the user choose same option as the previous move;
 - [ ] To Do unit tests;
 ## Done
@@ -49,10 +48,11 @@ Init the server
 - [x]  Logic Game
 - [x]  Styles with Bulma
 - [x]  Navigation with Routes
+- [x]  Display choices on the screen
 ## To Fix
 
 - On the Mobile, the options isn't responsive;
-- The choices is fixed on the screen;
+
 ## Contributing
 
 If you wish to contributing with this project:
